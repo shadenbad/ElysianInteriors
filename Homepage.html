@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
            } 
            
            #pic1{ 
-           background-color: #274C35; 
+           background-color: #173021 ; 
            } 
            
            #pic1 img { 
@@ -26,14 +26,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
            }
            
            #logo { 
-           width: 5%  ;
-           height: 5% ; }
+           width: 10%  ;
+           height: 10% ; }
            
            .navigation {
   overflow: hidden;
-  background-color: #274C35;
-  line-height: 600%;
+  background-color: #173021;
   color: #BFB7B1;
+}
+
+    header { 
+    width:99.6%;
+    position:fixed;
+    top:0px;
 }
           /* header{
     background: var(--clr-heading);  
@@ -47,31 +52,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     align-items: center; 
     padding: 10px 200px; 
      position: fixed ; 
-          }*/
+          }*/ 
           
-          .navigation a {
+          .navigation img {
   float: right;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
 }
 
 .navigation a:hover {
-  background-color: #1a3323 ;
+  background-color: #0b140f ;
   color: #FFF ;
 }
 
 
   
-  .navigation a{
+  .navigation a {
+     display: inline ; 
     color: var(--clr-headingText);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.2vw;
-    padding-left: 20px;
+    line-height: 400% ; 
+    font-size: 1.7vw;
 }
-        
+ 
         
         
         </style>
@@ -80,17 +82,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <header>  
            <nav class="navigation">
                <br>
-               <img id="logo" src="logo.png" alt="logo image">
-               <a href="Homepage.html" class="nav-link"> <pre> | Home </pre>  </a>
-               <a href="SignUp.html" class="nav-link"> <pre> | Sign Up </pre>   </a>
-               <a href="LogIn.html" class="nav-link"> <pre> Log In </pre> </a>
+                
+                   <img id="logo" src="logo.png" alt="logo image">
+                  <a href="Homepage.html" class="nav-link">Home | </a>
+                  <a href="SignUp.html" class="nav-link">Sign Up | </a>
+                  <a href="LogIn.html" class="nav-link">Log In </a> 
+                  <br> 
+                  <br> 
+               
            </nav> 
         </header>     
             
         <div id="pic1"> 
                 <img src="pic3.png" alt=""/>
-                <br> 
-                <br> 
         </div> 
     </body>
 </html>
