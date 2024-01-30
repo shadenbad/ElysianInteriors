@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add Project</title>
+  <link rel="stylesheet" href="addpr.css">
+</head>
+
+
+<body>
+  <form action="home.html" method="POST">
+    <h2>Add Project</h2>
+
+    <label for="project-name">Project Name:</label>
+    <input type="text" id="project-name" name="project-name" required>
+
+    <label for="project-image">Project Image:</label>
+    <input type="file" id="project-image" name="project-image" accept="image/*" required style="color: aliceblue;">
+
+    <label for="design-category">Design Category:</label>
+    <select id="design-category" name="design-category" required>
+      <option value="">Select a category</option>
+      <option value="Country">Country</option>
+      <option value="Modern">Modern</option>
+      <option value="Coastal">Coastal</option>
+    </select>
+
+    <label for="project-description">Project Description:</label>
+    <textarea id="project-description" name="project-description" required></textarea>
+
+    <button type="submit">Add Project</button>
+  </form>
+</body>
+</html>
