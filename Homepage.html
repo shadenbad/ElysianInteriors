@@ -38,7 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     header { 
     width:99.6%;
     position:fixed;
-    top:0px;
+    top:0vw ;
 }
           /* header{
     background: var(--clr-heading);  
@@ -58,7 +58,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
   float: right;
 }
 
-.navigation a:hover {
+ .NAV:hover { 
   background-color: #0b140f ;
   color: #FFF ;
 }
@@ -74,8 +74,90 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     font-size: 1.7vw;
 }
  
-        
-        
+footer{
+  background-color: #173021;
+  color: #BFB7B1;
+  padding: 2vw; 
+} 
+
+footer p{
+  color: #BFB7B1;
+  font-weight: bold;
+  font-size: 1.2vw;
+  padding: 2px 11px;
+  border-radius: 3px;
+} 
+   footer .rights{
+  font-size: 0.8vw;
+  padding: 1vw;
+  color: #BFB7B1;
+}     
+   
+/* to make it responsive */ 
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width:1879px){
+  header{
+    padding: 10px 10px 10px 1px; 
+}
+
+.navigation a{
+  font-size: 1.7vw;
+}
+
+footer .rights{
+  font-size: 15px;
+}
+
+
+}
+
+@media (max-width:768px){
+
+.logo{
+  float:left;
+  font-size: 4vw;
+}
+
+
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navigation{
+    position: fixed;
+    left: -100%;
+    top: 130px;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--clr-heading);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .navigation a{
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+  }
+    .navigation.active{
+    left: 0;
+  }
+}
         </style>
     </head>
     <body>
@@ -84,17 +166,49 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                <br>
                 
                    <img id="logo" src="logo.png" alt="logo image">
-                  <a href="Homepage.html" class="nav-link">Home | </a>
-                  <a href="SignUp.html" class="nav-link">Sign Up | </a>
-                  <a href="LogIn.html" class="nav-link">Log In </a> 
+                   <div class="NAV" style="display: inline ;"><a href="Homepage.html" class="nav-link">Home | </a></div>
+                   <div class="NAV" style="display: inline ;"><a href="SignUp.html" class="nav-link">Sign Up | </a></div>
+                   <div class="NAV" style="display: inline ;"><a href="LogIn.html" class="nav-link">Log In </a></div>
                   <br> 
                   <br> 
                
            </nav> 
+            
+            <div class="hamburger">
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+            </div> 
         </header>     
             
         <div id="pic1"> 
                 <img src="pic3.png" alt=""/>
         </div> 
+        
+         <footer style="margin-bottom: 0 ; margin-top:10%">
+
+     <em>Contact Us </em>
+     <p style="margin: 0.75vw; font-size: small;">(Contact@ElysianInteriors.sa)</p>
+     <small class="rights">
+         © Elysian Interiors 2024. All rights reserved.
+     </small>
+
+ </footer>
+        
+        <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navigation = document.querySelector(".navigation");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navigation.classList.toggle("active");
+    })
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navigation.classList.remove("active");
+
+    })) 
+    </script> 
     </body>
 </html>
