@@ -25,9 +25,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
            width : 100% ; 
            }
            
-           #logo { 
-           width: 10%  ;
-           height: 10% ; }
+           .logo { 
+           width: 9%  ;
+           height: 9% ;
+           float: right; }
+           
            
            .navigation {
   overflow: hidden;
@@ -36,8 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 }
 
     header { 
-    width:99.6%;
-    position:fixed;
+    width:100%;
     top:0vw ;
 }
           /* header{
@@ -58,7 +59,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
   float: right;
 }
 
- .NAV:hover { 
+ .navigation a:hover { 
   background-color: #0b140f ;
   color: #FFF ;
 }
@@ -83,13 +84,13 @@ footer{
 footer p{
   color: #BFB7B1;
   font-weight: bold;
-  font-size: 1.2vw;
+  font-size: 1.7vw;
   padding: 2px 11px;
   border-radius: 3px;
 } 
    footer .rights{
   font-size: 0.8vw;
-  padding: 1vw;
+  padding: 1.3vw;
   color: #BFB7B1;
 }     
    
@@ -112,14 +113,18 @@ footer .rights{
   font-size: 15px;
 }
 
+ #pic1 img { 
+           width : 100% ; 
+           }
 
 }
 
 @media (max-width:768px){
 
 .logo{
-  float:left;
-  font-size: 4vw;
+  float:right;
+  width: 1%  ;
+           height: 1% ;
 }
 
 
@@ -154,25 +159,30 @@ footer .rights{
     display: flex;
     flex-direction: column;
   }
-    .navigation.active{
-    left: 0;
-  }
+  
+   #pic1 img { 
+           width : 100% ; 
+           }
 }
         </style>
     </head>
     <body>
         <header>  
-           <nav class="navigation">
+           <div class="navigation">
                <br>
                 
-                   <img id="logo" src="logo.png" alt="logo image">
-                   <div class="NAV" style="display: inline ;"><a href="Homepage.html" class="nav-link">Home | </a></div>
-                   <div class="NAV" style="display: inline ;"><a href="SignUp.html" class="nav-link">Sign Up | </a></div>
-                   <div class="NAV" style="display: inline ;"><a href="LogIn.html" class="nav-link">Log In </a></div>
+                   <img class="logo" src="logo3.png" alt="logo image">
+                   <a href="Homepage.html" class="nav-link">Home | </a>
+                   <a href="SignUp.html" class="nav-link">Sign Up | </a>
+                   <a href="LogIn.html" class="nav-link">Log In </a>
+                   <br> 
+                  <br>
+                   <div id="pic1"> <img src="pic3.png" alt=""/></div>
+                  <br> 
                   <br> 
                   <br> 
                
-           </nav> 
+           </div> 
             
             <div class="hamburger">
                  <span class="bar"></span>
@@ -181,18 +191,13 @@ footer .rights{
             </div> 
         </header>     
             
-        <div id="pic1"> 
-                <img src="pic3.png" alt=""/>
-        </div> 
         
          <footer style="margin-bottom: 0 ; margin-top:10%">
-
-     <em>Contact Us </em>
+             <em>Contact Us </em>
      <p style="margin: 0.75vw; font-size: small;">(Contact@ElysianInteriors.sa)</p>
      <small class="rights">
          © Elysian Interiors 2024. All rights reserved.
-     </small>
-
+     </small> 
  </footer>
         
         <script>
