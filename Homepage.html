@@ -8,40 +8,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <style> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style> 
             
-            html {
+html {
     scroll-behavior: smooth;
 }
-           body { background-color: #FEFEFA ;
-           } 
+body { background-color: #FEFEFA ;} 
+html, body {
+    margin: 0;
+    padding: 0;
+}
            
-           #pic1{ 
-           background-color: #173021 ; 
-           } 
+#pic1{ background-color: #173021 ; } 
            
-           #pic1 img { 
-           width : 100% ; 
-           }
+#pic1 img {  width : 100% ; }
            
-           .logo { 
-           width: 9%  ;
-           height: 9% ;
-           float: right; }
-           
-           
-           .navigation {
-  overflow: hidden;
-  background-color: #173021;
-  color: #BFB7B1;
+.logo { 
+width: 9%  ;
+height: 9% ;
+float: right; }
+
+.navigation {
+overflow: hidden;
+background-color: #173021;
+color: #BFB7B1;
+
 }
 
-    header { 
-    width:100%;
-    top:0vw ;
-}
-          /* header{
+ /* header{
     background: var(--clr-heading);  
     background-color: #274C35;
     width : 91.2% ; 
@@ -55,26 +52,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
      position: fixed ; 
           }*/ 
           
-          .navigation img {
-  float: right;
+.navigation img {
+float: right;
 }
 
- .navigation a:hover { 
+.navigation a:hover { 
   background-color: #0b140f ;
   color: #FFF ;
 }
 
-
-  
-  .navigation a {
-     display: inline ; 
-    color: var(--clr-headingText);
-    text-decoration: none;
-    font-weight: 500;
-    line-height: 400% ; 
-    font-size: 1.7vw;
+.navigation a {
+  display: inline ; 
+  color: var(--clr-headingText);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 400% ; 
+  font-size: 1.7vw;
 }
- 
+
+.navigationP1{
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+/*footer style*/
 footer{
   background-color: #173021;
   color: #BFB7B1;
@@ -100,6 +101,8 @@ footer p{
   cursor: pointer;
 }
 
+
+/*
 @media (max-width:1879px){
   header{
     padding: 10px 10px 10px 1px; 
@@ -113,9 +116,9 @@ footer .rights{
   font-size: 15px;
 }
 
- #pic1 img { 
-           width : 100% ; 
-           }
+#pic1 img { 
+width : 100% ; 
+}
 
 }
 
@@ -142,41 +145,110 @@ footer .rights{
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .navigation{
-    position: fixed;
-    left: -100%;
-    top: 130px;
-    gap: 0;
-    flex-direction: column;
-    background-color: var(--clr-heading);
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-  }
-
-  .navigation a{
-    font-size: 3vw;
-    display: flex;
-    flex-direction: column;
-  }
-  
-   #pic1 img { 
-           width : 100% ; 
-           }
+.navigation{
+  position: fixed;
+  left: -100%;
+  top: 130px;
+  gap: 0;
+  flex-direction: column;
+  background-color: var(--clr-heading);
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
 }
+
+.navigation a{
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+}
+  
+#pic1 img { 
+width : 100% ; 
+ }
+}
+*/
+
+
+/* first part style*/
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3vw;
+  border-radius: 1.65vw;
+  background: #274C35;
+  background-size: 100%;
+  color: #FCFCF6;
+  border: none;
+  margin-top: 0.8vw;
+  text-align:center;
+  line-height: 3vw;
+  font-size: 1.5vw;
+  font-family: Playfair Display ;
+  width: 15vw;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+.button a {
+	text-decoration: none;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 15vw;
+  height: inherit;
+  border-radius: inherit;
+  background: #E6CF35;
+  transition: all 0.475s;
+}
+
+.button a:visited{
+  color: #FCFCF6;
+}
+.button a:link{
+  color: #E6CF35;
+}
+.button a:hover{
+  color: #fff;
+}
+
+.first-part{
+  padding-top: 10vw;
+}
+
+.first-part p{
+ text-align: center; 
+}
+
         </style>
     </head>
     <body>
         <header>  
            <div class="navigation">
                <br>
-                
+            <div class="navigationP1">  
                    <img class="logo" src="logo3.png" alt="logo image">
                    <a href="Homepage.html" class="nav-link">Home | </a>
                    <a href="SignUp.html" class="nav-link">Sign Up | </a>
                    <a href="LogIn.html" class="nav-link">Log In </a>
                    <br> 
+            </div>      
                   <br>
+
                    <div id="pic1"> <img src="pic3.png" alt=""/></div>
                   <br> 
                   <br> 
@@ -191,7 +263,26 @@ footer .rights{
             </div> 
         </header>     
             
-        
+        <main>
+          <div class="first-part">
+
+            <div class="button">
+              <span class="button-content"><a href="" class="button-element">Log-in</a></span>
+            </div>
+            <p>New user? <a href=""> Sign-up</a></p><br><br>
+
+            <img src="images/" alt="" >
+            <img src="" alt="" >
+            <img src="" alt="" >
+
+          </div>
+          <div class="second-part">
+            <img src="" alt="" >
+            <p></p>
+          </div>
+
+        </main>
+
          <footer style="margin-bottom: 0 ; margin-top:10%">
              <em>Contact Us </em>
      <p style="margin: 0.75vw; font-size: small;">(Contact@ElysianInteriors.sa)</p>
