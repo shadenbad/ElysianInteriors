@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Consultation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .consultation-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Design Consultation</h2>
+
+<div class="consultation-container">
+  
+    
+   
+    
+    <!-- Design consultation form -->
+    <form id="consultationForm">
+        <label for="consultationInput">Design Consultation:</label>
+        <textarea id="consultationInput" name="consultationInput" rows="4" required></textarea>
+
+        <label for="designImage">Upload Design Image:</label>
+        <input type="file" id="designImage" name="designImage" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<!--
+<script>
+    document.getElementById('consultationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+
+        // You may want to add code here to handle the form data, for example, sending it to a server.
+
+        // Redirect to the designer's homepage (replace 'designer-homepage.html' with the actual URL)
+        window.location.href = 'designer-homepage.html';
+    });
+</script>
+
+-->
+
+
+
+</body>
+</html>
