@@ -10,52 +10,55 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style> 
             
-            * {
+body {
     background-color: #FCFCF6;
 }
 
+html, body {
+margin: 0;
+padding: 0;
+}
+
+/*navigation style */
 .logo { 
-           width: 9%  ;
-           height: 9% ;
-           float: right;
-           padding-left: 3vw;
-  padding-right: 3vw;}
-           
-           
-           .navigation {
-  overflow: hidden;
-  background-color: #173021;
-  color: #BFB7B1;
+width: 11%  ;
+height: 9% ;
+float: right; }
+
+.navigation {
+overflow: hidden;
+background-color: #173021;
+color: #BFB7B1;
+}
+.navigation img {
+float: right;
 }
 
-    header { 
-    width:100%;
-    top:0vw ;
-} 
-   .navigation img {
-  float: right;
-  background-color: #173021;
-}
-
- .navigation a:hover { 
+.navigation a:hover { 
   background-color: #0b140f ;
   color: #FFF ;
 }
 
-
-  
-  .navigation a {
-     display: inline ; 
-    color: var(--clr-headingText);
-    text-decoration: none;
-    font-weight: 500;
-    line-height: 400% ; 
-    font-size: 1.7vw;
-    background-color: #173021;
+.navigation a {
+  display: inline ; 
+  color: var(--clr-headingText);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 400% ; 
+  font-size: 1.7vw;
 }
+
+.navigation{
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-bottom: 1vw;
+}
+                   
 .links{padding-left: 3vw;
   padding-right: 3vw;
   background-color:#173021; }
+
+
 
 footer{
   background-color: #173021;
@@ -143,12 +146,18 @@ footer .rights{
            }
 }
 */ 
+/* tables style*/
 table {
-    margin-left: auto;
-  margin-right: auto;
     border-collapse: separate;
     border-spacing: 0;
- 
+    margin-left: auto;
+    margin-right: auto;  
+    border-radius: 1.5vw;
+    font-size: 1.2vw;
+    font-family: PT Serif ;
+    box-shadow: -2vw 2vw 3vw #E5E4E4;
+    margin-top: 4vw;
+    margin-bottom: 5vw;
 }
 
 
@@ -165,19 +174,37 @@ th.empty-cell {
 
 td{
     text-align: center;
-    padding: 1vw;
-    background-color: #fff ;
-    
+    padding: 0.8vw;
+    background-color: #ffffff; 
 }
 
 th:first-child {
-    border-top-left-radius: 15px;
+    border-top-left-radius: 1.5vw;
+}
+
+th:last-child {
+    border-right: hidden;
 }
 
 .last-cell-with-color {
 
-    border-top-right-radius: 15px; 
+    border-top-right-radius: 1.5vw;
 
+}
+
+.bottomRadiusLeft{
+    border-bottom-left-radius: 1.5vw;
+}
+
+.bottomRadiusRight{
+    border-bottom-right-radius: 1.5vw;
+}
+
+caption{ 
+    line-height: 3.4vw;
+    font-size: 1.7vw ; 
+    font-weight: bold ; 
+    text-align: left;
 }
 
  .B1{ 
@@ -201,8 +228,10 @@ th:first-child {
     text-decoration: none ; }
 
  #category {
-   text-align: center;
+   text-align: left;
 display: block ;
+padding-top: 4vw;
+padding-left: 4vw;
 } 
 
 #filter { color : #FFF ; 
@@ -215,48 +244,41 @@ border-radius: 8px ;
 #filter:hover { 
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
 
-caption { font-size: 1.28vw;
-    margin: 2vw;
-    line-height : 1.7vw;
-    font-family: Kalam ;
-    text-align: center;
-    font-weight: bold;}
 
-.arch-container {
+
+    .arch-container {
     position: relative;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
+    padding-bottom: 5vw;
 }
 
 .arch-shape {
     position: absolute;
-    top: -6vw;
-    right: -3vw;
-    width: 25vw;
+    top: 0vw;
+    right: -1vw;
+    width: 24vw;
     height: 38vw;
     background-color: #173021;
-    border-top-left-radius: 15vw;
-    border-top-right-radius: 15vw;
+    border-top-left-radius: 16vw;
+    border-top-right-radius: 16vw;
     transform: rotate(180deg);
     z-index: 1;
     margin-right: 5vw;
 }
 
-
-
 .text-container {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-left: 2vw;
+    margin-left: 4vw;
+    margin-top: 8vw;
 }
 
 .chairImg {
     position: absolute;
-    top: -3.5vw;
-    right: 8vw;
-    width: 25vw;
-    border-radius: 18vw;
+    top: 2vw;
+    right: 11vw;
+    width: 24.7vw;
+    border-radius: 16vw;
     z-index: 3;
 }
 
@@ -400,9 +422,9 @@ color: black ;
             </tr>
             
             <tr> 
-                <td><img  class="designerLogo" src="images/designer2.png" alt=""></td> 
+                <td class="bottomRadiusLeft"><img  class="designerLogo" src="images/designer2.png" alt=""></td> 
                 <td> Minimalist </td>
-                <td> <button class="B2"><a href=""> request design consultation </a></button></td> 
+                <td class="bottomRadiusRight"> <button class="B2"><a href=""> request design consultation </a></button></td> 
             </tr> 
             
         </table> 
@@ -423,7 +445,7 @@ color: black ;
             
             
             <tr> 
-                <td><img  class="designerLogo" src="images/designer3.png" alt=""></td>
+                <td ><img  class="designerLogo" src="images/designer3.png" alt=""></td>
                 <td> Living Room </td> 
                 <td> 4x5m </td> 
                 <td> Modern </td> 
@@ -443,13 +465,13 @@ color: black ;
             </tr> 
             
             <tr> 
-                <td><img  class="designerLogo" src="images/designer2.png" alt=""></td> 
+                <td class="bottomRadiusLeft"><img  class="designerLogo" src="images/designer2.png" alt=""></td> 
                 <td> Kitchen </td> 
                 <td> 3x3m </td> 
                 <td> Minimalist </td>
                 <td> Black And White </td> 
                 <td> 5/1/2024 </td> 
-                <td> Consultation Declined </td> 
+                <td class="bottomRadiusRight"> Consultation Declined </td> 
             </tr> 
         </table>
                 
