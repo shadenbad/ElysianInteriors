@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Consultation Page</title>
+    <style>
+       .costulation-head{
+    letter-spacing: 1px;
+    margin: 2vw ;
+    padding: 1vw 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.costulation-head h2{
+    font-size: 3vw;
+    font-weight: bold;
+    background-color: #173021;
+    color: #fff;
+    padding:1vw 2vw;
+    border-radius: 2vw;
+}
+
+.consultation-container {
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the container */
+  border: 1px solid black; /* Solid black border */
+  padding: 20px; /* Padding inside the container */
+}
+
+.consultation-container h3 {
+  border-bottom: 1px solid black; /* Line under the header */
+  padding-bottom: 10px; /* Space between the text and the line */
+}
+
+.request-info {
+  margin-top: 20px; /* Space above the request info section */
+}
+
+.request-info strong {
+  font-weight: bold; /* Make labels bold */
+}
+
+/* Below are additional styles you might consider adding: */
+
+/* Style for paragraphs inside the request info to space out information */
+.request-info p {
+  line-height: 1.5; /* Increase line height for better readability */
+  margin-bottom: 10px; /* Space after each paragraph */
+}
+
+/* Style for the 'Send' button to match the design */
+button {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Padding inside the button */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+/* Style for input fields */
+input, textarea {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside the inputs */
+  margin-bottom: 10px; /* Space after each input field */
+  border: 1px solid #000; /* Black border for input fields */
+}
+
+/* Styles for the form elements within the consultation-container */
+.consultation-container form {
+  margin-top: 20px; /* Space above the form */
+}
+
+.consultation-container label {
+  display: block; /* Ensure labels appear on their own line */
+  margin-bottom: 5px; /* Space between the label and the input field */
+  font-weight: bold; /* Bold font for the label */
+}
+
+.consultation-container textarea {
+  width: 100%; /* Full width of the container */
+  padding: 10px; /* Padding inside the textarea */
+  margin-bottom: 20px; /* Space after the textarea */
+  border: 1px solid #000; /* Black border for the textarea */
+  resize: vertical; /* Allows vertical resizing of the textarea */
+}
+
+.consultation-container input[type="file"] {
+  margin-bottom: 20px; /* Space after the file input */
+}
+
+.consultation-container button[type="submit"] {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Padding inside the button */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  display: block; /* Make the button a block to fill the width */
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+/* Style the button to have a hover effect */
+.consultation-container button[type="submit"]:hover {
+  background-color: #333; /* Slightly lighter black for hover effect */
+}
+
+/* Additional responsive or specific styles may be required to match your exact design needs. */
+/* Additional adjustments might be needed depending on the exact look you're aiming for, but the above should give you a good starting point. */
+    </style>
+</head>
+<body>
+    <div class="costulation-head">
+        <h2>Design Consultation</h2>
+
+    </div>
+    
+
+<div class="consultation-container">
+    <h3>Request information</h3>
+  <div class="request-info">
+    <p>
+        <strong>Client: </strong> Sarah Ahmad<br>
+        <strong>Room: </strong> Living Room<br>
+        <strong>Dimensions: </strong> 4x5m<br>
+        <strong>Design Category: </strong> Modren<br>
+        <strong>Color Prefrences: </strong> Beige and Green<br>
+        <strong>Date: </strong> 9/1/2024<br>
+
+    </p>
+  </div>
+    
+   
+    
+    <!-- Design consultation form -->
+    <form id="consultationForm">
+        <label for="consultationInput"><strong>Consultation:</strong></label> <br>
+        <textarea id="consultationInput" name="consultationInput" rows="4" required></textarea>
+        <br>
+
+        <label for="designImage"><strong>Upload Image:</strong></label><br>
+        <input type="file" id="designImage" name="designImage" accept="image/*" >
+        <br>
+
+        <button type="submit">Send</button>
+    </form>
+</div>
+<!--
+<script>
+    document.getElementById('consultationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+
+        // You may want to add code here to handle the form data, for example, sending it to a server.
+
+        // Redirect to the designer's homepage (replace 'designer-homepage.html' with the actual URL)
+        window.location.href = 'designer-homepage.html';
+    });
+</script>
+
+-->
+
+
+
+</body>
+</html>
