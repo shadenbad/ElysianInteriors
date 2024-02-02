@@ -11,8 +11,9 @@
     background-color: #FCFCF6;
 }
 
-header{
-    margin: 5vw;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 .button1{
@@ -165,13 +166,52 @@ caption{
     width: 14vw;
 }
 
+/*navigation style */
+.logo { 
+width: 11%  ;
+height: 9% ;
+float: right; }
+
+.navigation {
+overflow: hidden;
+background-color: #173021;
+color: #BFB7B1;
+}
+.navigation img {
+float: right;
+}
+
+.navigation a:hover { 
+  background-color: #0b140f ;
+  color: #FFF ;
+}
+
+.navigation a {
+  display: inline ; 
+  color: var(--clr-headingText);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 400% ; 
+  font-size: 1.7vw;
+}
+
+.navigation{
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
 
         </style>
     </head>
     <body>
 
         <header>
-             
+            <div class="navigation">  
+                <img class="logo" src="images/logo.png" alt="logo image">
+                <a href="Homepage.html" class="nav-link">Home | </a>
+                <a href="SignUp.html" class="nav-link">Sign Up | </a>
+                <a href="LogIn.html" class="nav-link">Log In </a>
+                <br> 
+         </div> 
         </header>
 
         <main>

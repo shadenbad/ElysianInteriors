@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kalam:wght@300;400;700&family=Lobster&display=swap" rel="stylesheet">
+        <title>Elysian interiors</title>
+        <style>
+
+html, body {
+margin: 0;
+padding: 0;
+}
+
+main{
+    background-color: #FCFCF6;
+}
+
+/*navigation style */
+.logo { 
+width: 11%  ;
+height: 9% ;
+float: right; }
+
+.navigation {
+overflow: hidden;
+background-color: #173021;
+color: #BFB7B1;
+}
+.navigation img {
+float: right;
+}
+
+.navigation a:hover { 
+  background-color: #0b140f ;
+  color: #FFF ;
+}
+
+.navigation a {
+  display: inline ; 
+  color: var(--clr-headingText);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 400% ; 
+  font-size: 1.7vw;
+}
+
+.navigation{
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-bottom: 1vw;
+}
+
+/*button style*/
+
+.button1{
+    border: #EDEBD7 solid 0.12vw;
+    border-radius:0.9vw ;
+    position: absolute;
+    top: 2vw; 
+    right: -20vw;
+    background-color: #FEFEFA;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    color: black;
+    z-index: 3;
+    width: 6vw;
+    height: 2vw;
+    font-size: 1.15vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+ 
+  .button1:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+        
+ /* welcome style*/
+
+ h3{
+    font-size: 1.8vw;
+    font-family: DM Serif Display ;
+ }
+.message {
+    font-size: 1.6vw;
+    margin: 2.5vw 2vw 1.5vw;
+    margin-right: 36vw;
+    line-height : 1.7vw;
+    font-family: kalam ;
+} 
+.arch-container {
+    position: relative;
+    padding-bottom: 15vw;
+}
+
+.arch-shape {
+    position: absolute;
+    top: 0vw;
+    right: -1vw;
+    width: 24vw;
+    height: 38vw;
+    background-color: #173021;
+    border-top-left-radius: 16vw;
+    border-top-right-radius: 16vw;
+    transform: rotate(180deg);
+    z-index: 1;
+    margin-right: 5vw;
+}
+.designerinfo{
+    display: inline-block;
+    text-align : center ; 
+    background-color: #DDC22B;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border:#FEFEFA solid 0.1vw;
+    border-radius: 1.2vw 4vw;
+    padding: 2vw 1vw;
+    margin: 2vw 1vw;
+    min-height: 6em;
+    width: 25em;
+    overflow: hidden;
+    transition: 0.7s;
+    line-height : 200%; 
+    color : #FCFCF6 ; 
+}
+
+.designerinfo p {
+  background-color: #DDC22B;
+  font-family: DM Serif Display ;
+}
+
+.text-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2vw;
+}
+
+.chairImg {
+    position: absolute;
+    top: 2vw;
+    right: 11vw;
+    width: 24.7vw;
+    border-radius: 16vw;
+    z-index: 3;
+}
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="navigation">  
+                <img class="logo" src="images/logo.png" alt="logo image">
+                <a href="Homepage.html" class="nav-link">Home | </a>
+                <a href="SignUp.html" class="nav-link">Sign Up | </a>
+                <a href="LogIn.html" class="nav-link">Log In </a>
+                <br> 
+         </div> 
+        </header>
+
+        <main>
+            <div class="arch-container">
+                <img class="chairImg" src="images/chair.jpeg" alt="chair">
+                <div class="arch-shape"></div>
+                <div class="text-container">
+                    <div class="welcome">
+                        <h3>Welcome Shaden</h3>
+                        <div class="button-container">
+                            <a href="Homepage.html">
+                                <button class="button1">Log Out</button>
+                            </a>
+                        </div>
+                        <p class="message">Unleash your design prowess, craft captivating spaces.</p>
+                    </div>
+                    <div class="designerinfo">
+                        <p>
+                            Shaden Al-bader<br>shadnalbadr@gmail.com<br>Serenity spaces<br> <im class="brandlogo" src="images/designerlogo.png" alt="designer log "> <br>
+                            Speciality : <br>
+                            <div class="Speciality" > Country  - Modern - Minimalist</div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+
+</html>

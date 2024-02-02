@@ -17,7 +17,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 .logo { 
            width: 9%  ;
            height: 9% ;
-           float: right; }
+           float: right;
+           padding-left: 3vw;
+  padding-right: 3vw;}
            
            
            .navigation {
@@ -51,7 +53,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     font-size: 1.7vw;
     background-color: #173021;
 }
- 
+.links{padding-left: 3vw;
+  padding-right: 3vw;
+  background-color:#173021; }
+
 footer{
   background-color: #173021;
   color: #BFB7B1;
@@ -78,7 +83,7 @@ footer p{
   display: none;
   cursor: pointer;
 }
-
+/*  
 @media (max-width:1879px){
   header{
     padding: 10px 10px 10px 1px; 
@@ -91,7 +96,7 @@ footer p{
 footer .rights{
   font-size: 11px;
 }
-            
+       
 @media (max-width:768px){
 
 .logo{
@@ -137,7 +142,7 @@ footer .rights{
            width : 100% ; 
            }
 }
-
+*/ 
 table {
     margin-left: auto;
   margin-right: auto;
@@ -176,13 +181,12 @@ th:first-child {
 }
 
  .B1{ 
-   border-radius: 8px ; 
-   background-color: #3a5a40;
-   width: 6em;
-   height: 2.5em; } 
+   background-color: #173021;
+   width: 10em;
+   height: 3em; } 
  
  .B1 a{ color : #FFF ; 
-   background-color: #3a5a40;
+   background-color: #173021;
     text-decoration: none ; }
  
 .B2{ 
@@ -286,6 +290,37 @@ caption { font-size: 1.28vw;
      width: 10vw;
      background-color: #FFF ; 
   }
+  .button {
+  position: relative;
+  overflow: hidden;
+  height: 3.7vw;
+  background-color: #173021;
+  background-size: 100%;
+  color: #BFB7B1;
+  margin-top: 0.8vw;
+  line-height: 4vw;
+  font-size: 1.5vw;
+  font-family: Playfair Display ;
+  width: 10vw;
+  padding-left: 0.5vw ; 
+  padding-right: 1vw ; 
+ 
+
+}
+.button a {
+  background-color: #173021;
+  color: #BFB7B1;
+  font-size: 1.5vw; 
+  padding-left: 0.5vw ; 
+  padding-right: 3vw ;
+  padding-bottom: 0.5vw;
+}
+
+
+
+.button a:hover {
+background-color:#BFB7B1;
+color: black ; 
 
 
         </style>
@@ -295,17 +330,19 @@ caption { font-size: 1.28vw;
                    <header>  
            <div class="navigation">
                <br>
-                
-                   <img class="logo" src="images/logo1.png" alt="logo image">
+                 
+                   <img class="logo" src="images/logo.png" alt="logo image">
+                   <div class="links">
                    <a href="Homepage.html" class="nav-link">Home | </a>
                    <a href="SignUp.html" class="nav-link">Sign Up | </a>
                    <a href="LogIn.html" class="nav-link">Log In </a>
+                   </div>
                    <br> 
-                  <br>
-                   <div id="pic1"> <img src="pic3.png" alt=""/></div>
-                  <br> 
-                  <br> 
-                  <br> 
+                  <div class="button">
+              <span class="button-content"><a href="Homepage.html" class="button-element">Log Out</a></span>
+            </div>
+                   <br> 
+                  <!--<button class="B1" style=" text-decoration: none ;color:whitesmoke;"><a href="Homepage.html">Log Out</a></button> -->
                
            </div> 
             
@@ -327,7 +364,6 @@ caption { font-size: 1.28vw;
                         <h3>Welcome Hailah </h3>
                         <p style="font-size: 120% ; font-weight: bolder;">
                             Hailah Alshehri<br>hailah392@gmail.com<br> 
-                            <button class="B1" style=" text-decoration: none ;color:whitesmoke;"><a href="Homepage.html">Log Out</a></button>
                         </p>
                     </div>
                 </div>
@@ -387,7 +423,7 @@ caption { font-size: 1.28vw;
             
             
             <tr> 
-                <td> logo <br> brand name </td>
+                <td><img  class="designerLogo" src="images/designer3.png" alt=""></td>
                 <td> Living Room </td> 
                 <td> 4x5m </td> 
                 <td> Modern </td> 
@@ -397,7 +433,7 @@ caption { font-size: 1.28vw;
             </tr> 
             
             <tr> 
-                <td> logo <br> brand name </td> 
+                <td><img  class="designerLogo" src="images/designer3.png" alt=""></td> 
                 <td> Bedroom </td> 
                 <td> 3x4m </td> 
                 <td> Coastal </td>
@@ -407,7 +443,7 @@ caption { font-size: 1.28vw;
             </tr> 
             
             <tr> 
-                <td> logo <br> brand name </td> 
+                <td><img  class="designerLogo" src="images/designer2.png" alt=""></td> 
                 <td> Kitchen </td> 
                 <td> 3x3m </td> 
                 <td> Minimalist </td>
