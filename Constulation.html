@@ -5,6 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Consultation Page</title>
     <style>
+                 
+html {
+    scroll-behavior: smooth;
+}
+body { background-color: #FEFEFA ;} 
+html, body {
+    margin: 0;
+    padding: 0;
+}.logo { 
+width: 11%  ;
+height: 9% ;
+float: right; }
+
+.navigation {
+overflow: hidden;
+background-color: #173021;
+color: #BFB7B1;
+
+}.navigation img {
+float: right;
+}
+
+.navigation a:hover { 
+  background-color: #0b140f ;
+  color: #FFF ;
+}
+
+.navigation a {
+  display: inline ; 
+  color: var(--clr-headingText);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 400% ; 
+  font-size: 1.7vw;
+}
+
+.navigationP1{
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+/*footer style*/
+footer{
+  background-color: #173021;
+  color: #BFB7B1;
+  padding: 2vw; 
+  margin-top: 0;
+} 
+
+footer p{
+  color: #BFB7B1;
+  font-weight: bold;
+  font-size: 1.7vw;
+  padding: 2px 11px;
+  border-radius: 3px; 
+} 
+footer .rights{
+  font-size: 0.8vw;
+  padding: 1.3vw;
+  color: #BFB7B1;
+}     
+   
+/* to make it responsive */ 
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
        .costulation-head{
     letter-spacing: 1px;
     margin: 2vw ;
@@ -26,59 +93,72 @@
 }
 
 .consultation-container {
-  width: 80%; /* Adjust width as needed */
-  margin: 0 auto; /* Center the container */
-  border: 1px solid black; /* Solid black border */
-  padding: 20px; /* Padding inside the container */
+  width: 80%; 
+  margin: 0 auto; 
+  border: 1px solid black; 
+  padding: 20px; 
+  margin-bottom: 2vw;
 }
 
 .consultation-container h3 {
-  border-bottom: 1px solid black; /* Line under the header */
-  padding-bottom: 10px; /* Space between the text and the line */
+  font-size: 1.5vw;
+    font-weight: bold;
+    background-color: #173021;
+    color: #fff;
+    padding:1vw 2vw;
+    border-radius: 2vw;
+  padding-bottom: 10px; 
 }
 
 .request-info {
-  margin-top: 20px; /* Space above the request info section */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #000; 
 }
 
-.request-info strong {
-  font-weight: bold; /* Make labels bold */
-}
 
-/* Below are additional styles you might consider adding: */
 
-/* Style for paragraphs inside the request info to space out information */
+
+
+
 .request-info p {
-  line-height: 1.5; /* Increase line height for better readability */
-  margin-bottom: 10px; /* Space after each paragraph */
+  line-height: 1.5; 
+  margin-bottom: 10px; 
 }
 
-/* Style for the 'Send' button to match the design */
+/* Style for the 'Send' button */
 button {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  padding: 10px 20px; /* Padding inside the button */
-  border: none; /* No border */
-  cursor: pointer; /* Cursor changes to pointer on hover */
+  background-color: #000; 
+  color: #fff; 
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer; 
 }
 
 /* Style for input fields */
 input, textarea {
-  width: 100%; /* Full width */
-  padding: 10px; /* Padding inside the inputs */
-  margin-bottom: 10px; /* Space after each input field */
-  border: 1px solid #000; /* Black border for input fields */
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 10px;
+  border: 1px solid #000; 
+  margin-right: 10px;
 }
 
-/* Styles for the form elements within the consultation-container */
+
 .consultation-container form {
   margin-top: 20px; /* Space above the form */
 }
 
 .consultation-container label {
-  display: block; /* Ensure labels appear on their own line */
-  margin-bottom: 5px; /* Space between the label and the input field */
-  font-weight: bold; /* Bold font for the label */
+  display: block; 
+  margin-bottom: 5px; 
+
+  font-size: 1.5vw;
+    font-weight: bold;
+    background-color: #173021;
+    color: #fff;
+    padding:1vw 2vw;
+    border-radius: 2vw;
 }
 
 .consultation-container textarea {
@@ -86,11 +166,12 @@ input, textarea {
   padding: 10px; /* Padding inside the textarea */
   margin-bottom: 20px; /* Space after the textarea */
   border: 1px solid #000; /* Black border for the textarea */
-  resize: vertical; /* Allows vertical resizing of the textarea */
+ box-sizing: border-box;
 }
 
 .consultation-container input[type="file"] {
-  margin-bottom: 20px; /* Space after the file input */
+  margin-bottom: 20px; 
+  box-sizing: border-box;
 }
 
 .consultation-container button[type="submit"] {
@@ -114,6 +195,22 @@ input, textarea {
     </style>
 </head>
 <body>
+  <header>  
+    <div class="navigation">
+        <br>
+     <div class="navigationP1">  
+            <img class="logo" src="images/logo.png" alt="logo image">
+            <a href="Homepage.html" class="nav-link">Home | </a>
+            <a href="SignUp.html" class="nav-link">Sign Up | </a>
+            <a href="LogIn.html" class="nav-link">Log In </a>
+            <br> 
+     </div>      
+           <br>    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+ </div> 
+</header>
     <div class="costulation-head">
         <h2>Design Consultation</h2>
 
@@ -139,7 +236,7 @@ input, textarea {
     <!-- Design consultation form -->
     <form id="consultationForm">
         <label for="consultationInput"><strong>Consultation:</strong></label> <br>
-        <textarea id="consultationInput" name="consultationInput" rows="4" required></textarea>
+        <textarea id="consultationInput" name="consultationInput" rows="6" required></textarea>
         <br>
 
         <label for="designImage"><strong>Upload Image:</strong></label><br>
@@ -149,19 +246,33 @@ input, textarea {
         <button type="submit">Send</button>
     </form>
 </div>
-<!--
+
+<footer style="margin-bottom: 0; padding-top: 3vw;"">
+  <hr style="color: #BFB7B1;">
+  <br> 
+  <em>Contact Us </em>
+<p style="margin: 0.75vw; font-size: small;">(Contact@ElysianInteriors.sa)</p>
+<small class="rights">
+©️ Elysian Interiors 2024. All rights reserved.
+</small> 
+</footer> 
+
+
 <script>
-    document.getElementById('consultationForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevents the default form submission behavior
+const hamburger = document.querySelector(".hamburger");
+const navigation = document.querySelector(".navigation");
 
-        // You may want to add code here to handle the form data, for example, sending it to a server.
+hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
+navigation.classList.toggle("active");
+})
 
-        // Redirect to the designer's homepage (replace 'designer-homepage.html' with the actual URL)
-        window.location.href = 'designer-homepage.html';
-    });
-</script>
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+hamburger.classList.remove("active");
+navigation.classList.remove("active");
 
--->
+})) 
+</script> 
 
 
 
