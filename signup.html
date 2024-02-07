@@ -424,7 +424,8 @@ background-color: #6f670c4d;
             <form action="#" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
     <hr>
-                          <form class="info">
+                        
+                          <form required class="info">
                             <h4>User Type:</h4>
                             <div class="radio-container">
                               <input type="radio" id="designer" name="user-type" value="designer" onclick="showForm(this)">
@@ -436,16 +437,16 @@ background-color: #6f670c4d;
                             <br>
                             
                             <div class=" form-container designer-form">
-                                <input type="text" id="first-name" name="brand-name" placeholder="First name" required>
+                                <input required type="text" id="first-name" name="brand-name" placeholder="First name">
 
-                                <input type="text" id="last-name" name="brand-name" placeholder="Last name" required>
+                                <input required type="text" id="last-name" name="brand-name" placeholder="Last name">
 
-                                <input type="email" placeholder="Email"> 
-                                <input type="password" placeholder="Password">
-                              <input type="text" id="brand-name" name="brand-name" placeholder="Brand name" required>
+                                <input required type="email" placeholder="Email"> 
+                                <input required type="password" placeholder="Password">
+                              <input required type="text" id="brand-name" name="brand-name" placeholder="Brand name">
                               <br>
                               <label for="logo">Logo:</label>
-                              <input type="file" id="logo" name="logo" accept="image/*" required>
+                              <input required type="file" id="logo" name="logo" accept="image/*" >
                               <br>
                               <label for="speciality">Speciality in Interior Design Categories:</label>
                               <div class="checkbox1">
@@ -474,12 +475,12 @@ background-color: #6f670c4d;
                             <div class=" form-container client-form">   
 
 
-                                <input type="text" id="first-name" name="brand-name" placeholder="First name" required>
+                                <input required type="text" id="first-name" name="brand-name" placeholder="First name">
 
-                                <input type="text" id="last-name" name="brand-name" placeholder="Last name" required>
+                                <input required type="text" id="last-name" name="brand-name" placeholder="Last name">
 
-                                <input type="email" placeholder="Email"> 
-                                <input type="password" placeholder="Password">
+                                <input required type="email" placeholder="Email"> 
+                                <input required type="password" placeholder="Password">
 
 
 
@@ -488,8 +489,8 @@ background-color: #6f670c4d;
                 
               </form>
             
-          </form>
-          </div>
+          </form> 
+        </div> 
 
 
        
