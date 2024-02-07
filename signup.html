@@ -338,8 +338,8 @@ h4{
     color: #0b361e;
 }
 
-.designer-form,
-.client-form {
+#designer-form,
+#client-form {
     display: none;
   background-color:#e6ce358a;
   justify-content: center;
@@ -364,7 +364,25 @@ background-color: #6f670c4d;
     color: #6f670c;
   margin-bottom: 20px;
 }
+.hidden {
+      display: none;
+    }
   </style>
+  <script>
+    // JavaScript code to handle form visibility
+    function showForm(userType) {
+      var designerForm = document.getElementById("designer-form");
+      var clientForm = document.getElementById("client-form");
+
+      if (userType === "designer") {
+        designerForm.style.display = "block";
+        clientForm.style.display = "none";
+      } else if (userType === "client") {
+        designerForm.style.display = "none";
+        clientForm.style.display = "block";
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -424,19 +442,19 @@ background-color: #6f670c4d;
             <form action="#" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
     <hr>
-                        
+                      
                           <form required class="info">
                             <h4>User Type:</h4>
                             <div class="radio-container">
-                              <input type="radio" id="designer" name="user-type" value="designer" onclick="showForm(this)">
+                              <input type="radio" id="designer" name="user-type" value="designer" onclick="showForm('designer')">
                               <label for="designer">Designer</label>
                               
-                              <input type="radio" id="client" name="user-type" value="client" onchange="showForm(this)">
+                              <input type="radio" id="client" name="user-type" value="client" onchange="showForm('client')">
                               <label for="client">Client</label>
                             </div>
                             <br>
-                            
-                            <div class=" form-container designer-form">
+                          </form>
+                            <form action="Designerpage.html" method="post" id="designer-form" class="hidden">
                                 <input required type="text" id="first-name" name="brand-name" placeholder="First name">
 
                                 <input required type="text" id="last-name" name="brand-name" placeholder="Last name">
@@ -470,9 +488,9 @@ background-color: #6f670c4d;
 
                               </div>
                              
-                            </div>
+                            </form>
                             
-                            <div class=" form-container client-form">   
+                            <form action="Clientpage.html" method="post" id="client-form" class="hidden">
 
 
                                 <input required type="text" id="first-name" name="brand-name" placeholder="First name">
@@ -484,8 +502,10 @@ background-color: #6f670c4d;
 
 
 
-                                <button type="submit" class="btn-solid">Sing up</button>
-                          </div>
+                                <a href="Clientpage.html">
+                                  <button type="submit" class="btn-solid">Sing up</button>
+                                </a>
+                            </form>
                 
               </form>
             
@@ -509,21 +529,6 @@ background-color: #6f670c4d;
 </footer> 
 
      <script>
-
-        function showForm(radio) {
-          var userType = radio.value;
-          var formContainers = document.getElementsByClassName("form-container");
-          
-          for (var i = 0; i < formContainers.length; i++) {
-            var formContainer = formContainers[i];
-            
-            if (formContainer.classList.contains(userType + "-form")) {
-              formContainer.style.display = "block";
-            } else {
-              formContainer.style.display = "none";
-            }
-          }
-        }
 
         
         const hamburger = document.querySelector(".hamburger");
