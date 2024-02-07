@@ -83,10 +83,12 @@ footer .rights{
    
 }
 
+
+
 .costulation-head h2{
     font-size: 3vw;
     font-weight: bold;
-    background-color: #173021;
+    background-color: #3a5a40;
     color: #fff;
     padding:1vw 2vw;
     border-radius: 2vw;
@@ -104,7 +106,7 @@ footer .rights{
 .consultation-container h3 {
   font-size: 1.5vw;
     font-weight: bold;
-    background-color: #173021;
+    background-color: #3a5a40;
     color: #fff;
     padding:1vw 2vw;
     border-radius: 2vw;
@@ -127,14 +129,7 @@ footer .rights{
   margin-bottom: 10px; 
 }
 
-/* Style for the 'Send' button */
-button {
-  background-color: #000; 
-  color: #fff; 
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer; 
-}
+
 
 /* Style for input fields */
 input, textarea {
@@ -156,17 +151,18 @@ input, textarea {
 
   font-size: 1.5vw;
     font-weight: bold;
-    background-color: #173021;
+    background-color: #3a5a40;
     color: #fff;
     padding:1vw 2vw;
     border-radius: 2vw;
 }
 
 .consultation-container textarea {
-  width: 100%; /* Full width of the container */
-  padding: 10px; /* Padding inside the textarea */
-  margin-bottom: 20px; /* Space after the textarea */
-  border: 1px solid #000; /* Black border for the textarea */
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 20px; 
+  border: 1px solid #000; 
+  
  box-sizing: border-box;
 }
 
@@ -176,24 +172,27 @@ input, textarea {
 }
 
 .consultation-container button[type="submit"] {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  padding: 10px 20px; /* Padding inside the button */
-  border: none; /* No border */
-  cursor: pointer; /* Cursor changes to pointer on hover */
-  display: block; /* Make the button a block to fill the width */
-  width: 100%; /* Full width of the container */
-  box-sizing: border-box; /* Includes padding and border in the width */
+  background-color:  #e6ce35e5; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  cursor: pointer; 
+  display: block; 
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
-/* Style the button to have a hover effect */
-.consultation-container button[type="submit"]:hover {
-  background-color: #333; /* Slightly lighter black for hover effect */
-}
+  
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
 
-/* Additional responsive or specific styles may be required to match your exact design needs. */
-/* Additional adjustments might be needed depending on the exact look you're aiming for, but the above should give you a good starting point. */
+
+
+
     </style>
+    <script src="Const.js"></script>
+    
 </head>
 <body>
   <header>  
@@ -231,11 +230,11 @@ input, textarea {
 
     </p>
   </div>
-    
+
    
     
     <!-- Design consultation form -->
-    <form id="consultationForm">
+    <form id="consultationForm"  onsubmit="return redirect()" >
         <label for="consultationInput"><strong>Consultation:</strong></label> <br>
         <textarea id="consultationInput" name="consultationInput" rows="6" required></textarea>
         <br>
@@ -244,7 +243,11 @@ input, textarea {
         <input type="file" id="designImage" name="designImage" accept="image/*" >
         <br>
 
-        <button type="submit">Send</button>
+        
+        <button type="submit" >Send</button>
+        
+
+        
     </form>
 </div>
 

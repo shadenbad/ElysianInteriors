@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update Project</title>
+  <link rel="stylesheet" href="addpr2.css">
+  <script src="Const.js"></script>
+
+</head>
+
+
+<body>
+  <form action="home.html" method="POST" onsubmit="return redirect()">
+    <h2>Update Project</h2>
+
+    <label for="project-name">Project Name:</label>
+    <input type="text" id="project-name" name="project-name" required value="Sun House">
+ 
+    <label for="project-image">Project Image: <img class="tableimage" src="images/countryhouse.jpeg" alt="sun house" width="30vw"></label>
+    <input type="file" id="project-image" name="project-image" accept="image/*" required style="color: aliceblue;">
+
+    <label for="design-category">Design Category:</label>
+    <select id="design-category" name="design-category" required>
+      <option value="">Country</option>
+      <option value="Country">Country</option>
+      <option value="Modern">Modern</option>
+      <option value="Coastal">Coastal</option>
+    </select>
+
+    <label for="project-description">Project Description:</label>
+    <textarea id="project-description" name="project-description" required>Rustic white sun house that has many green plants and windows with a country style.</textarea>
+
+    <button type="submit">Update </button>
+  </form>
+</body>
+</html>
