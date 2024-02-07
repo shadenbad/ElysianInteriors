@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Design Consultation</title>
+  <link rel="stylesheet" href="req1.css">
+</head>
+<body>
+
+  <div class="navigation">
+            
+    <br>
+ <div class="navigationP1">  
+    
+        <img class="logo" src="images/logo.png" alt="logo image">
+        <a href="Homepage.html" class="nav-link">Home | </a>
+        <a href="SignUp.html" class="nav-link">Sign Up | </a>
+        <a href="LogIn.html" class="nav-link">Log In </a>
+
+        <br> 
+ </div>                  
+       <br>
+
+        <div id="pic1"> <img src="images/pic3.png" alt=""/></div>
+       <br> 
+       <br> 
+       <br> 
+    
+</div> 
+ 
+ <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+ </div> 
+
+ <img src="images/dec4.png" class="light" height="300px" width="300px" >
+
+ 
+
+
+  <form action="client_home.html" method="POST">
+    <h2>Design Consultation</h2>
+    <label for="room-type">Room Type:</label>
+    <select id="room-type" name="room-type" required>
+      <option value="">Select room type</option>
+      <option value="Living Room">Living Room</option>
+      <option value="Bedroom">Bedroom</option>
+      <option value="Kitchen">Kitchen</option>
+      <option value="Bathroom">Bathroom</option>
+      <option value="Dining Room">Dining Room</option>
+      <option value="Office">Office</option>
+    </select>
+
+    <label for="room-dimensions">Room Dimensions (in meters):</label>
+    <div>
+      <input type="text" id="room-width" name="room-width" placeholder="Width" required>
+      <input type="text" id="room-length" name="room-length" placeholder="Length" required>
+    </div>
+
+    <label for="design-category">Design Category:</label>
+    <select id="design-category" name="design-category" required>
+      <option value="">Select design category</option>
+      <option value="Modern">Modern</option>
+      <option value="Contemporary">Contemporary</option>
+      <option value="Traditional">Traditional</option>
+      <option value="Rustic">Rustic</option>
+      <option value="Minimalist">Minimalist</option>
+      <option value="Bohemian">Bohemian</option>
+    </select>
+
+    <label for="color-preferences">Color Preferences:</label>
+    <textarea id="color-preferences" name="color-preferences" rows="4" placeholder="Enter your color preferences"></textarea>
+
+    <button type="submit">Request Consultation</button>
+  </form>
+
+  <footer style="margin-bottom: 0; padding-top: 3vw;"">
+    <hr style="color: #BFB7B1;">
+    <br> 
+    <em>Contact Us </em>
+<p style="margin: 0.75vw; font-size: small;">(Contact@ElysianInteriors.sa)</p>
+<small class="rights">
+© Elysian Interiors 2024. All rights reserved.
+</small> 
+</footer> 
+
+
+</body>
+</html>
