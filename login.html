@@ -285,12 +285,12 @@ footer .rights{
                 <br>
 
                 <div class="input-field">
-                    <input required type="email" placeholder="Email Address" />
+                    <input id="Email" required type="email" placeholder="Email Address" />
                 </div>
 
 
                 <div class="input-field">
-                    <input required type="password" placeholder="Password" />
+                    <input id="pass" required type="password" placeholder="Password" />
                 </div>
 
 
@@ -303,7 +303,7 @@ footer .rights{
                     <label for="client"> Client</label>
                 </div>
 
-                <button type="submit" class="btn-solid" onclick="ToPage()"> Sign in</button>
+                <button type="submit" class="btn-solid" onclick="return ToPage()"> Sign in</button>
 
 
 
@@ -356,16 +356,30 @@ footer .rights{
 
           
             function ToPage(event) {
+                var email = document.getElementById("Email").value;
+                var pass = document.getElementById("pass").value;
+
                 var userType = document.querySelector('input[name="user-type"]:checked').value;
                 var gopage;
 
-
-                if (userType === "client") {
-                    window.open('Clientpage.html','location=yes');
+                if(email.length >=2 && pass.length>=2){
+                    if (userType === "client") {
+                        window.location.href = "Clientpage.html";
+                        return false;
                 }
                 else if (userType === "designer") {
-                    window.open('Designerpage.html','location=yes');
+                    window.location.href = "Designerpage.html";
+                    return false;
+
+
                 }
+
+                }else {
+            alert('You must fill in all the required fields.');
+        }
+
+
+              
 
             }
     </script>
