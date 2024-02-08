@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Design Consultation </title>
+    <title>Design Consultation Page</title>
     <style>
                  
 html {
@@ -220,28 +220,34 @@ input, textarea {
 <div class="consultation-container">
     <h3>Request information</h3>
   <div class="request-info">
-      <p>
-          <strong>Client: </strong>Hailah Alshehri <br>
-          <strong>Room: </strong> Bedroom <br>
-          <strong>Dimensions: </strong> 3x4 <br>
-          <strong>Design Category: </strong> Coastal <br>
-          <strong>Color Preferences: </strong> Blue And White <br>
-          <strong>Date: </strong> 7/1/2024<br>
+    <p>
+        <strong>Client: </strong> Ali Jamal<br>
+        <strong>Room: </strong> Bedroom<br>
+        <strong>Dimensions: </strong> 3x4m<br>
+        <strong>Design Category: </strong> Coastal<br>
+        <strong>Color Preferences: </strong> Blue and White<br>
+        <strong>Date: </strong> 15/1/2024<br>
 
-      </p>
+    </p>
   </div>
 
    
     
     <!-- Design consultation form -->
-    <form id="consultationForm" >
-        <label for="consultationInput"><strong>Your Consultation:</strong></label> <br>
-        <textarea id="consultationInput" name="consultationInput" rows="6" required>I've been thinking about redesigning my bedroom, and I'd love to get your input. 
-I generally like Coasta style, but I want it to feel cozy and inviting. I prefer neutral colors, 
-but maybe with a pop of something. Also, I need plenty of storage, and it would be great to have a cozy reading nook. What are your thoughts?</textarea>
+    <form id="consultationForm"  onsubmit="return redirect()" >
+        <label for="consultationInput"><strong>Consultation:</strong></label> <br>
+        <textarea id="consultationInput" name="consultationInput" rows="6" required></textarea>
         <br>
 
-       
+        <label for="designImage"><strong>Upload Image:</strong></label><br>
+        <input type="file" id="designImage" name="designImage" accept="image/*" >
+        <br>
+
+        
+        <button type="submit" >Send</button>
+        
+
+        
     </form>
 </div>
 
