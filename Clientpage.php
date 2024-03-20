@@ -3,16 +3,12 @@
 
 session_start();
 
-// Check if the user is logged in
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
+// Check if the user is logged in or the type is client 
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'client') {
     header('Location: Homepage.html'); // Redirect to the home page if not logged in
     exit();
 }
-// check user if not type client
-if (basename($_SERVER['PHP_SELF']) === 'ClientPage.php' && $_SESSION['type'] !== 'client') {
-    header('Location: Homepage.html'); // Redirect to the home page if not a client
-    exit();
-}
+
 ?>  
 
 <!DOCTYPE html>
