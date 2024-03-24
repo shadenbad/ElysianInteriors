@@ -288,7 +288,7 @@ footer .rights{
                       </div>
                 <?php endif; ?>
 
-            <form action="login_handler.php" method="post">
+            <form action="login_handler.php" method="post" class="sign-in-form" >
 
                 <h2 class="title">Log in</h2>
                 <hr>
