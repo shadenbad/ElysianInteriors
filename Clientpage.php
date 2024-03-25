@@ -518,7 +518,13 @@ if ($result_requests->num_rows > 0) {
         echo "<td>{$row['category']}</td>";
         echo "<td>{$row['colorPrefrences']}</td>";
         echo "<td>{$row['date']}</td>";
-
+        if($row['status']=='Consultation Provided'){
+            $requestID = $row['id']; 
+            $sql = "SELECT consultationImgFileName FROM designconsultation WHERE requestID = '$requestID'"; 
+            $result = mysqli_query($connection, $sql); 
+            $row1 = mysqli_fetch_assoc($result); 
+            echo "<td><img class='consultation' src='ProjectImages/".$row1['consultationImgFileName']."'alt='Consultation'>" ."<br>".$row['status']."</td>";
+        }
         echo "<td>{$row['status']}</td>";
         echo "</tr>";
     }
