@@ -457,9 +457,9 @@ $result_designers = mysqli_query($connection, $sql_designers);
             // Loop through each designer and display them in the table
             while ($row = mysqli_fetch_assoc($result_designers)) {
                 echo "<tr> <br> <br>";
-                echo "<td ><a href='portfolio.php?id=".$row['id']."'><img class='designerLogo' src='ProjectImages/".$row['logoImgFileName']."' alt='Designer Logo'>"."<br>".$row['brandName']."</a></td>";
+                echo "<td class='bottomRadiusLeft' ><a href='portfolio.php?id=".$row['id']."'><img class='designerLogo' src='ProjectImages/".$row['logoImgFileName']."' alt='Designer Logo'>"."<br>".$row['brandName']."</a></td>";
                 echo "<td>" . $row['specialties'] . "</td>";
-                echo '<td><button class="B2"><a href="req.php?id=' . $row["id"] . '">Request Design Consultation</a></button></td>';
+                echo '<td class="bottomRadiusRight"><button class="B2"><a href="req.php?id=' . $row["id"] . '">Request Design Consultation</a></button></td>';
                 echo "</tr>";
             }
         }
@@ -512,7 +512,7 @@ if ($result_requests->num_rows > 0) {
     while ($row = $result_requests->fetch_assoc()) {
         echo "<tr>";
         // Designer's logo and brand name
-        echo "<td ><img class='designerLogo' src='ProjectImages/".$row['logoImgFileName']."' alt='Designer Logo'>"."<br>".$row['brandName']."</td>";
+        echo "<td class='bottomRadiusLeft'><img class='designerLogo' src='ProjectImages/".$row['logoImgFileName']."' alt='Designer Logo'>"."<br>".$row['brandName']."</td>";
         echo "<td>{$row['roomType']}</td>";
         echo "<td>{$row['roomWidth']}x{$row['roomLength']}</td>";
         echo "<td>{$row['category']}</td>";
@@ -523,10 +523,12 @@ if ($result_requests->num_rows > 0) {
             $sql = "SELECT consultationImgFileName FROM designconsultation WHERE requestID = '$requestID'"; 
             $result = mysqli_query($connection, $sql); 
             $row1 = mysqli_fetch_assoc($result); 
-            echo "<td><img class='consultation' src='ProjectImages/".$row1['consultationImgFileName']."'alt='Consultation'>" ."<br>".$row['status']."</td>";
+            echo "<td class='bottomRadiusRight' ><img class='consultation' src='ProjectImages/".$row1['consultationImgFileName']."'alt='Consultation'>" ."<br>".$row['status']."</td>";
         }
-        echo "<td>{$row['status']}</td>";
+        else {
+        echo "<td class='bottomRadiusRight' >{$row['status']}</td>"; }
         echo "</tr>";
+
     }
 }
     else {
@@ -563,4 +565,4 @@ echo "</table>"
     })) 
     </script>
         </body>
-           </html>  
+           </html>
