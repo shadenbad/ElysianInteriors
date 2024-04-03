@@ -1,4 +1,3 @@
- 
 <?php
 
 session_start();
@@ -526,13 +525,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'client') {
             
             // Check if the status is 'Consultation Provided' and retrieve consultation data
          // Check if the status is 'Consultation Provided' and retrieve consultation data
-if ($row['status'] == 'Consultation Provided') {
+if ($row['status'] === 'Consultation Provided ') {
     $requestID = $row['id']; 
     $sql1 = "SELECT * FROM designconsultation WHERE requestID = '$requestID'"; 
     $result1 = mysqli_query($connection, $sql1); 
     $row1 = mysqli_fetch_assoc($result1); 
-    echo $row['status'] . "<br>"; // Debugging output for status
-    echo "<img class='consultation' src='ProjectImages/" . $row1['consultationImgFileName'] . "' alt='Consultation'><br>" . $row1['consultation'];
+    echo $row['status']."<br>"; // Debugging output for status
+    echo "<img class='consultation' src='ProjectImages/".$row1['consultationImgFileName']."' alt='Consultation'><br>". $row1['consultation'];
 } else {
     echo $row['status']; // Debugging output for status
 }
