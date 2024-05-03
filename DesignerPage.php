@@ -7,9 +7,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'designer') {
     header('Location: Homepage.php'); // Redirect to the home page if not logged in
     exit();
 }
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 ?>  
 <!DOCTYPE html>
 <html>
@@ -324,6 +321,35 @@ footer .rights{
   color: #BFB7B1;
 }  
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+$(document).ready(function () {
+    $(".B2 a").on("click", function (e) {
+        var project_id = $(this).attr("href").split("=")[1];
+        var row = $(this).closest("tr");
+
+        $.ajax({
+            type: "GET",
+            url: "delete-project.php?project_id=" + project_id,
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    row.remove();
+                } else {
+                    alert("Failed to delete project.");
+                }
+            },
+            error: function () {
+                alert("Failed to delete project.");
+            }
+        });
+
+        return false; // Prevent the default behavior of the anchor tag
+    });
+});
+
+    </script>
     </head>
 
     <body>
@@ -495,10 +521,8 @@ footer .rights{
                             echo '<td>' . $row["colorPrefrences"] . '</td>';
                             echo '<td>' . $row["date"] . '</td>';
                             echo '<td><button class="B2"><a href="con1.php?request_id=' . $row['requestID'] . '">Provide Consultation</a></button></td>';
-                            echo '<td class="bottomRadiusRight"><button class="B2 decline" data-id="' . $row['requestID'] . '">Decline Consultation</button></td>';
-
-
-                            echo '</tr>';
+                            echo '<td class="bottomRadiusRight"><button class="B2"><a href="decline-consultation.php?request_id=' . $row["requestID"] . '">Decline Consultation</a></button></td>';
+    echo '</tr>';      
                         }
                         } 
                         
@@ -527,33 +551,37 @@ footer .rights{
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-// JavaScript part on the DesignerPage.php
-$(document).ready(function() {
-    $('.decline').on('click', function() {
-        var requestId = $(this).data('id'); // Assumes data-id attribute holds the request ID
-        if (confirm('Are you sure you want to decline this consultation request?')) {
-            $.ajax({
-                url: 'decline-consultation.php',
-                type: 'POST',
-                data: {requestId: requestId},
-                dataType: 'json',
-                success: function(response) {
-                    if (response.success) {
-                        alert('Consultation declined successfully.');
-                        // Remove the row on success
-                        $('button[data-id="' + requestId + '"]').closest('tr').remove();
-                    } else {
-                        alert('Failed to decline the consultation. ' + (response.message || ''));
-                    }
-                },
-                error: function() {
-                    alert('Error processing your request.');
+ <script>
+$(document).ready(function () {
+    $(".B2 a").on("click", function (e) {
+        var project_id = $(this).attr("href").split("=")[1];
+        var row = $(this).closest("tr");
+
+        $.ajax({
+            type: "GET",
+            url: "decline-consultation.php?request_id=" + requestId,
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    row.remove();
+                } else {
+                    alert("Failed to delete project.");
                 }
-            });
-        }
+            },
+            error: function () {
+                alert("Failed to delete project.");
+            }
+        });
+
+        return false; // Prevent the default behavior of the anchor tag
     });
 });
 
-</script>
+
+
+
+
+
+
+
     </script>
