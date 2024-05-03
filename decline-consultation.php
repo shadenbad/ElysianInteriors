@@ -1,34 +1,40 @@
+// PHP part in decline-consultation.php
 <?php
 session_start();
-
-$requestId = $_GET['request_id'];
-
-// Create connection
-$connection = mysqli_connect("localhost", "root", "root", "elysian_interiors");
-
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'designer') {
+    // Redirect if unauthorized access
+    header('Location: login.php');
+    exit();
 }
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-$sql = "UPDATE designconsultationrequest SET statusID = 100000002 WHERE id = ?";
-$stmt = $connection->prepare($sql);
+$requestId = filter_input(INPUT_POST, 'requestId', FILTER_VALIDATE_INT);
+$response = ['success' => false];
 
-if ($stmt) {
-    $stmt->bind_param("i", $requestId);
-    $stmt->execute();
-
-    if ($stmt->affected_rows > 0) {
-        echo 'true';  // Send 'true' if the update was successful
-        // Redirect to designer homepage using JavaScript
-        echo '<script>window.location.href = "DesignerPage.php";</script>';
+if ($requestId) {
+    include 'db_connect.php'; // Ensure your database connection is handled in this file
+    $stmt = $connection->prepare("UPDATE designconsultationrequest SET statusID = ? WHERE id = ?");
+    $declinedStatusId = 100000002; // Example status ID for 'Consultation Declined'
+    
+    if ($stmt) {
+        $stmt->bind_param('ii', $declinedStatusId, $requestId);
+        $stmt->execute();
+        if ($stmt->affected_rows > 0) {
+            $response['success'] = true;
+        } else {
+            $response['message'] = 'No changes made to the database.';
+        }
+        $stmt->close();
     } else {
-        echo 'false';  // Send 'false' if the update failed
+        $response['message'] = 'Database error: ' . $connection->error;
     }
-
-    $stmt->close();
+    $connection->close();
 } else {
-    echo 'false';  // Send 'false' if the statement preparation failed
+    $response['message'] = 'Invalid request ID.';
 }
 
-$connection->close();
+header('Content-Type: application/json');
+echo json_encode($response);
+exit;
 ?>
