@@ -1,23 +1,25 @@
 <?php
 
-include 'con1.php'; 
 
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+  $connection = mysqli_connect("localhost", "root", "root", "elysian_interiors");
+    
+    if(mysqli_connect_error()){
+      die("Connection failed: " . mysqli_connect_error());
+    } 
 
-$requestId = isset($_GET['requestId']) ? $_GET['requestId'] : null;
+$requestId = $_GET['request_id'];
 
-if ($requestId) {
-    $sql = "UPDATE design_consultations SET status = 'consultation declined' WHERE id = ?";
+$sql = "UPDATE designconsultationrequest SET statusID = 100000002 WHERE id = ?";
+$stmt = $connection->prepare($sql);
 
-    $stmt = $conn->prepare($sql);
-    if ($stmt) {
-        $stmt->bind_param("i", $requestId);
-        $stmt->execute();
+if ($stmt) {
+    $stmt->bind_param("i", $requestId);
+    $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
             echo json_encode(true);
+            echo '<script>window.location.href = "DesignerPage.php";</script>';
+
         } else {
             echo json_encode(false);  // No rows updated
         }
@@ -25,8 +27,6 @@ if ($requestId) {
     } else {
         echo json_encode(false);  // Statement preparation failed
     }
-    $conn->close();
-} else {
-    echo json_encode(false);  // No requestId provided
-}
+    $connection->close();
 ?>
+
