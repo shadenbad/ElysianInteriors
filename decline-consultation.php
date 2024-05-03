@@ -1,40 +1,32 @@
-// PHP part in decline-consultation.php
 <?php
-session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'designer') {
-    // Redirect if unauthorized access
-    header('Location: login.php');
-    exit();
-}
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
-$requestId = filter_input(INPUT_POST, 'requestId', FILTER_VALIDATE_INT);
-$response = ['success' => false];
+include 'con1.php'; 
+
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$requestId = isset($_GET['requestId']) ? $_GET['requestId'] : null;
 
 if ($requestId) {
-    include 'db_connect.php'; // Ensure your database connection is handled in this file
-    $stmt = $connection->prepare("UPDATE designconsultationrequest SET statusID = ? WHERE id = ?");
-    $declinedStatusId = 100000002; // Example status ID for 'Consultation Declined'
-    
+    $sql = "UPDATE design_consultations SET status = 'consultation declined' WHERE id = ?";
+
+    $stmt = $conn->prepare($sql);
     if ($stmt) {
-        $stmt->bind_param('ii', $declinedStatusId, $requestId);
+        $stmt->bind_param("i", $requestId);
         $stmt->execute();
+
         if ($stmt->affected_rows > 0) {
-            $response['success'] = true;
+            echo json_encode(true);
         } else {
-            $response['message'] = 'No changes made to the database.';
+            echo json_encode(false);  // No rows updated
         }
         $stmt->close();
     } else {
-        $response['message'] = 'Database error: ' . $connection->error;
+        echo json_encode(false);  // Statement preparation failed
     }
-    $connection->close();
+    $conn->close();
 } else {
-    $response['message'] = 'Invalid request ID.';
+    echo json_encode(false);  // No requestId provided
 }
-
-header('Content-Type: application/json');
-echo json_encode($response);
-exit;
 ?>
