@@ -7,6 +7,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'designer') {
     header('Location: Homepage.php'); // Redirect to the home page if not logged in
     exit();
 }
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 ?>  
 <!DOCTYPE html>
 <html>
@@ -16,8 +19,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'designer') {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kalam:wght@300;400;700&family=Lobster&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Designer Homepage</title>
+     
         <style>
 
 html, body {
@@ -287,6 +290,15 @@ caption{
     font-family: PT Serif ;
  }
 
+ 
+.B2 decline{ 
+   border-radius: 8px ; 
+   background-color: #DDC22B;
+   width: 9em;
+   height: 3.2em; 
+   border-color: #FFF ; 
+}
+
 .tableimage{
     width: 14vw;
 }
@@ -311,53 +323,7 @@ footer .rights{
   padding: 1.3vw;
   color: #BFB7B1;
 }  
-    </style>
-    <script>
-$(document).ready(function () {
-    $("#B2 a").on("click", function (e) {
-        var project_id = $(this).attr("href").split("=")[1];
-        var row = $(this).closest("tr");
-
-        $.ajax({
-            type: "GET",
-            url: "delete-project.php?project_id=" + project_id,
-            dataType: "json",
-            success: function (response) {
-                if (response.success) {
-                    row.remove();
-                } else {
-                    alert("Failed to delete project.");
-                }
-            },
-            error: function () {
-                alert("Failed to delete project.");
-            }
-        });
-
-        return false; // Prevent the default behavior of the anchor tag
-    });
-}); 
-</script>
-
-<script>
-    document.getElementById('declineButton').addEventListener('click', function() {
-    const requestId = this.getAttribute('data-request-id'); // Assuming each button has a data attribute for the request ID
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'decline-consultation.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
-        if (this.responseText == 'true') {
-            // Remove the row from the table
-            document.querySelector(tr[data-request-id="${requestId}"]).remove();
-        } else {
-            console.error('Failed to decline the consultation');
-        }
-    };
-    xhr.send('id=' + requestId);
-});
-
-    </script>
-        
+        </style>
     </head>
 
     <body>
@@ -472,7 +438,7 @@ $(document).ready(function () {
                             echo '<td>'.$row["designCategory"].'</td>';
                             echo '<td>'.$row["description"].'</td>';
                             echo '<td><button class="B2"><a href="Update.php?project_id=' . $row['id'] . '">Edit</a></button></td>';
-                            echo '<td class="bottomRadiusRight"><button id="B2" class="B2"><a href="delete-project.php?project_id=' . $row['id'] . '">Delete</a></button></td>';    
+                            echo '<td class="bottomRadiusRight"><button class="B2"><a href="delete-project.php?project_id=' . $row['id'] . '">Delete</a></button></td>';    
                             echo '</tr>';
                         }
                         
@@ -529,7 +495,9 @@ $(document).ready(function () {
                             echo '<td>' . $row["colorPrefrences"] . '</td>';
                             echo '<td>' . $row["date"] . '</td>';
                             echo '<td><button class="B2"><a href="con1.php?request_id=' . $row['requestID'] . '">Provide Consultation</a></button></td>';
-                            echo '<td class="bottomRadiusRight"><button id="declineButton" class="B2"><a href="decline-consultation.php?request_id=' . $row["requestID"] . '">Decline Consultation</a></button></td>';
+                            echo '<td class="bottomRadiusRight"><button class="B2 decline" data-id="' . $row['requestID'] . '">Decline Consultation</button></td>';
+
+
                             echo '</tr>';
                         }
                         } 
@@ -540,6 +508,7 @@ $(document).ready(function () {
     echo "<tr><td colspan='7'>No design consultation requests found.</td></tr>";
 }
                         ?>
+                    
                 </table>
             </div> 
             
@@ -555,3 +524,36 @@ $(document).ready(function () {
     </body>
 
 </html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// JavaScript part on the DesignerPage.php
+$(document).ready(function() {
+    $('.decline').on('click', function() {
+        var requestId = $(this).data('id'); // Assumes data-id attribute holds the request ID
+        if (confirm('Are you sure you want to decline this consultation request?')) {
+            $.ajax({
+                url: 'decline-consultation.php',
+                type: 'POST',
+                data: {requestId: requestId},
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        alert('Consultation declined successfully.');
+                        // Remove the row on success
+                        $('button[data-id="' + requestId + '"]').closest('tr').remove();
+                    } else {
+                        alert('Failed to decline the consultation. ' + (response.message || ''));
+                    }
+                },
+                error: function() {
+                    alert('Error processing your request.');
+                }
+            });
+        }
+    });
+});
+
+</script>
+    </script>
