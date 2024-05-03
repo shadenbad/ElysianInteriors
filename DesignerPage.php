@@ -325,7 +325,7 @@ footer .rights{
 
         <script>
 $(document).ready(function () {
-    $(".B2 a").on("click", function (e) {
+    $("#B2 a").on("click", function (e) {
         var project_id = $(this).attr("href").split("=")[1];
         var row = $(this).closest("tr");
 
@@ -464,7 +464,7 @@ $(document).ready(function () {
                             echo '<td>'.$row["designCategory"].'</td>';
                             echo '<td>'.$row["description"].'</td>';
                             echo '<td><button class="B2"><a href="Update.php?project_id=' . $row['id'] . '">Edit</a></button></td>';
-                            echo '<td class="bottomRadiusRight"><button class="B2"><a href="delete-project.php?project_id=' . $row['id'] . '">Delete</a></button></td>';    
+                            echo '<td class="bottomRadiusRight"><button id="B2" class="B2"><a href="delete-project.php?project_id=' . $row['id'] . '">Delete</a></button></td>';    
                             echo '</tr>';
                         }
                         
@@ -521,7 +521,7 @@ $(document).ready(function () {
                             echo '<td>' . $row["colorPrefrences"] . '</td>';
                             echo '<td>' . $row["date"] . '</td>';
                             echo '<td><button class="B2"><a href="con1.php?request_id=' . $row['requestID'] . '">Provide Consultation</a></button></td>';
-                            echo '<td class="bottomRadiusRight"><button class="B2"><a href="decline-consultation.php?request_id=' . $row["requestID"] . '">Decline Consultation</a></button></td>';
+                            echo '<td class="bottomRadiusRight"><button id="decline" class="B2"><a href="decline-consultation.php?request_id=' . $row["requestID"] . '">Decline Consultation</a></button></td>';
     echo '</tr>';      
                         }
                         } 
@@ -553,7 +553,7 @@ $(document).ready(function () {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script>
 $(document).ready(function () {
-    $(".B2 a").on("click", function (e) {
+    $(" #decline a").on("click", function (e) {
         var project_id = $(this).attr("href").split("=")[1];
         var row = $(this).closest("tr");
 
@@ -565,11 +565,11 @@ $(document).ready(function () {
                 if (response.success) {
                     row.remove();
                 } else {
-                    alert("Failed to delete project.");
+                    alert("Failed to decline.");
                 }
             },
             error: function () {
-                alert("Failed to delete project.");
+                alert("Failed to decline.");
             }
         });
 
