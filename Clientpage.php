@@ -319,6 +319,53 @@ a {
 }
 
         </style>
+        <script>
+   $(document).ready(function() {
+    $('#designCategoryFilter').change(function() {
+        var categoryId = $(this).val();
+        var tableBody = $('#designersTable tbody');
+        
+        // Show loading indicator
+        tableBody.html('<tr><td colspan="3">Loading...</td></tr>');
+
+        if (categoryId !== '') {
+            $.ajax({
+                url: 'fetch_designers.php',
+                method: 'GET',
+                dataType: 'json',
+                data: { category: categoryId },
+                success: function(response) {
+                    updateDesignersTable(tableBody, response);
+                },
+                error: function(xhr, status, error) {
+                    tableBody.html('<tr><td colspan="3">Error fetching designers. Please try again later.</td></tr>');
+                    console.log("Error fetching designers:", error);
+                }
+            });
+        } else {
+            tableBody.empty(); // Clear table body if no category selected
+        }
+    });
+
+    function updateDesignersTable(tableBody, designersData) {
+        tableBody.empty(); // Clear existing table rows
+        if (designersData.length === 0) {
+            // Show message if no designers are available for the selected category
+            tableBody.html('<tr><td colspan="3">No designers available for this category.</td></tr>');
+        } else {
+            $.each(designersData, function(index, designer) {
+                var row = '<tr>' +
+                    '<td><a href="portfolio.php?id=' + designer.id + '"><img class="designerLogo" src="ProjectImages/' + designer.logoImgFileName + '" alt="Designer Logo"><br>' + designer.brandName + '</a></td>' +
+                    '<td>' + designer.specialties + '</td>' +
+                    '<td><button class="B2"><a href="req.php?id=' + designer.id + '">Request Design Consultation</a></button></td>' +
+                    '</tr>';
+                tableBody.append(row);
+            });
+        }
+    }
+});
+
+</script>
     </head>   
     <body>
          <main> 
@@ -509,41 +556,6 @@ echo "</table>";
  </footer>
         
         </main>
- <script>
-    document.getElementById('designCategoryFilter').addEventListener('change', function () {
-        var categoryId = this.value;
-        if (categoryId !== '') {
-            // Send AJAX request to fetch designers based on selected category
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'fetch_designers.php?category=' + categoryId, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    var designersData = JSON.parse(xhr.responseText);
-                    updateDesignersTable(designersData);
-                }
-            };
-            xhr.send();
-        }
-    });
-
-    function updateDesignersTable(designersData) {
-        var tableBody = document.querySelector('#designersTable tbody');
-        tableBody.innerHTML = ''; // Clear existing table rows
-         if (designersData.length === 0) {
-        // Show message if no designers are available for the selected category
-        var messageRow = '<tr><td class="bottomRadiusLeft" colspan="3">No designers available for this category.</td></tr>';
-        tableBody.innerHTML = messageRow;
-    } 
-        designersData.forEach(function (designer) {
-            var row = '<tr>' +
-                '<td class="bottomRadiusLeft"><a href="portfolio.php?id=' + designer.id + '"><img class="designerLogo" src="ProjectImages/' + designer.logoImgFileName + '" alt="Designer Logo"><br>' + designer.brandName + '</a></td>' +
-                '<td>' + designer.specialties + '</td>' +
-                '<td class="bottomRadiusRight"><button class="B2"><a href="req.php?id=' + designer.id + '">Request Design Consultation</a></button></td>' +
-                '</tr>';
-            tableBody.insertAdjacentHTML('beforeend', row);
-        });
-    }
-</script>
    <script>
     const hamburger = document.querySelector(".hamburger");
     const navigation = document.querySelector(".navigation");
