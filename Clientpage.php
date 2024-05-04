@@ -404,11 +404,11 @@ a {
                      
                      // Start the session
                            session_start();
-                           $servername = "sql313.infinityfree.com";
-                           $username = "if0_36485051";
-                           $password = "Ll112233Ll";
-                           $dbname = "if0_36485051_elysian_interiors";
-
+                           $servername = "sql208.infinityfree.com";
+                           $username = "if0_36485235";
+                           $password = "Ll112233Lll";
+                           $dbname = "if0_36485235_elysian_interiors";
+                           
                            // Create connection
                            $connection = mysqli_connect($servername, $username, $password, $dbname);
                            if (mysqli_connect_error()) {
