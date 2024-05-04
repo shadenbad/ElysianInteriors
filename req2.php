@@ -10,10 +10,10 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "elysian_interiors";
+$servername = "sql313.infinityfree.com";
+$username = "if0_36485051";
+$password = "Ll112233Ll";
+$dbname = "if0_36485051_elysian_interiors";
 
 // Create connection
 $connection = new mysqli($servername, $username, $password, $dbname);

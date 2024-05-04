@@ -1,7 +1,7 @@
 <?php
 
 
-  $connection = mysqli_connect("localhost", "root", "root", "elysian_interiors");
+  $connection = mysqli_connect("sql313.infinityfree.com", "if0_36485051", "Ll112233Ll", "if0_36485051_elysian_interiors");
     
     if(mysqli_connect_error()){
       die("Connection failed: " . mysqli_connect_error());

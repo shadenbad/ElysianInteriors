@@ -157,7 +157,11 @@ footer .rights{
         // Check if the project ID is present in the query string
         $projectID = $_GET['project_id'];
         
-        $connection = mysqli_connect("localhost", "root", "root", "elysian_interiors");
+        $servername = "sql313.infinityfree.com";
+        $username = "if0_36485051";
+        $password = "Ll112233Ll";
+        $dbname = "if0_36485051_elysian_interiors";
+        $connection = mysqli_connect($servername, $username, $password,  $dbname);
         $sql = "SELECT * FROM designportoflioproject WHERE id = $projectID";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);

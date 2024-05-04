@@ -31,7 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Database connection
-    $connection = mysqli_connect("localhost", "root", "root", "elysian_interiors");
+    $servername = "sql313.infinityfree.com";
+    $username = "if0_36485051";
+    $password = "Ll112233Ll";
+    $dbname = "if0_36485051_elysian_interiors";
+    $connection = mysqli_connect($servername, $username, $password,  $dbname);
     if (!$connection) {
         die("Database connection failed: " . mysqli_connect_error());
     }
